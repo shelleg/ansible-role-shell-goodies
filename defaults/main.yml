@@ -3,7 +3,7 @@
 bash_posix_user: root
 bash_aliases_enable: true
 bash_aliases_file: "~/.bash_aliases"
-base_bash_aliases:
+bash_base_aliases:
   - { alias: '..',      cmd: 'cd ..' }
   - { alias: '...',     cmd: 'cd ../../../' }
   - { alias: '....',    cmd: 'cd ../../../../' }
