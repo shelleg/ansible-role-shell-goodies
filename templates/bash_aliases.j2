@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+{% for i in bash_base_aliases %}
+alias {{ i.alias }}="{{ i.cmd }}"
+{% endfor %}

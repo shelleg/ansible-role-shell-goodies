@@ -1,0 +1,13 @@
+---
+# tasks file for ansible-role-shell-goodies
+
+- name: "import base bash aliases"
+  become: "{{ bash_posix_user }}"
+  lineinfile:
+    dest: "{{ bash_aliases_file }}"
+    create: yes
+    mode: 0644
+    line: 'alias {{ item.alias }}="{{ item.command }}"'
+    regexp: "^alias {{ item.alias }}="
+  with_items: base_bash_aliases
+  when: bash_aliases_enable
